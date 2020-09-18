@@ -6,26 +6,31 @@
         <form method="post" action="/Persona/Create">
             <div class="form-group">
                 <label>Nombre</label>
+                @Html.ValidationMessage("Nombre")
                 <input type="text" name="Nombre" />
             </div>
 
             <div class="form-group">
                 <label>Apellido</label>
+                @Html.ValidationMessage("Apellido")
                 <input type="text" name="Apellido" />
             </div>
 
             <div class="form-group">
                 <label>Dni</label>
+                @Html.ValidationMessage("Dni")
                 <input type="text" name="Dni" />
             </div>
 
             <div class="form-group">
                 <label>Fecha de Nacimiento</label>
-                <input type="datetime-local" name="FachaNacimiento" />
+                @Html.ValidationMessage("FachaNacimiento")
+                <input type="date" name="FachaNacimiento" />
             </div>
 
             <div class="form-group">
                 <label>Genero:</label>
+                @Html.ValidationMessage("Genero")
                 <select name="Genero">
 
                     <option value="M"> Masculino </option>
@@ -36,6 +41,7 @@
 
             <div class="form-group">
                 <label>Ciudad</label>
+                @Html.ValidationMessage("Ciudad")
                 <select name="Ciudad">
                     @foreach (var i in ViewBag.Ciudad)
                     {
@@ -46,22 +52,26 @@
 
             <div class="form-group">
                 <label>Direccion</label>
+                @Html.ValidationMessage("Direccion")
                 <input type="text" name="Direccion" />
             </div>
 
           
             <div class="form-group">
                 <label>Correo</label>
+                @Html.ValidationMessage("Correo")
                 <input type="text" name="Correo" />
             </div>
 
             <div class="form-group">
                 <label>Usuario</label>
+                @Html.ValidationMessage("Usuario")
                 <input type="text" name="Usuario" />
             </div>
 
             <div class="form-group">
                 <label>Contraseña</label>
+                @Html.ValidationMessage("Contraseña")
                 <input type="text" name="Contraseña" />
             </div>
 

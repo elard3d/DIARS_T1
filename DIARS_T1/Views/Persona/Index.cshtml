@@ -40,10 +40,10 @@
             <td>@item.Apellido</td>
 
             
-            @*@{ var edad = DateTime.Today.AddTicks(-item.FachaNacimiento.Ticks).Year - 1;
-            }*@
+            @{ var edad = DateTime.Today.AddTicks(-item.FachaNacimiento.Ticks).Year - 1;
+            }
 
-            @*<td>@edad</td>*@
+            <td>@edad</td>
 
 
             <td>@item.Dni</td>
