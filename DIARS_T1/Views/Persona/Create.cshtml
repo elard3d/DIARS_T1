@@ -1,0 +1,75 @@
+﻿<h1>Crear Persona</h1>
+
+<div class="row">
+    <div class="col-16 offset-3">
+
+        <form method="post" action="/Persona/Create">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" name="Nombre" />
+            </div>
+
+            <div class="form-group">
+                <label>Apellido</label>
+                <input type="text" name="Apellido" />
+            </div>
+
+            <div class="form-group">
+                <label>Dni</label>
+                <input type="text" name="Dni" />
+            </div>
+
+            <div class="form-group">
+                <label>Fecha de Nacimiento</label>
+                <input type="datetime-local" name="FachaNacimiento" />
+            </div>
+
+            <div class="form-group">
+                <label>Genero:</label>
+                <select name="Genero">
+
+                    <option value="M"> Masculino </option>
+                    <option value="F"> Femenino </option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Ciudad</label>
+                <select name="Ciudad">
+                    @foreach (var i in ViewBag.Ciudad)
+                    {
+                        <option value="@i.IdCiudad">@i.Nombre</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Direccion</label>
+                <input type="text" name="Direccion" />
+            </div>
+
+          
+            <div class="form-group">
+                <label>Correo</label>
+                <input type="text" name="Correo" />
+            </div>
+
+            <div class="form-group">
+                <label>Usuario</label>
+                <input type="text" name="Usuario" />
+            </div>
+
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="text" name="Contraseña" />
+            </div>
+
+            <br /><br />
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+        </form>
+
+    </div>
+</div>

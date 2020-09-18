@@ -1,0 +1,93 @@
+﻿<h1>Editar Persona</h1>
+
+<div class="row">
+    <div class="col-16 offset-3">
+
+        <form method="post" action="/Persona/Edit">
+
+            <input type="text" name="IdPersona" value="@ViewBag.BuscarPersona.IdPersona" hidden />
+
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" name="Nombre" value="@ViewBag.BuscarPersona.Nombre" />
+            </div>
+
+            <div class="form-group">
+                <label>Apellido</label>
+                <input type="text" name="Apellido" value="@ViewBag.BuscarPersona.Apellido" />
+            </div>
+
+            <div class="form-group">
+                <label>Dni</label>
+                <input type="text" name="Dni" value="@ViewBag.BuscarPersona.Dni" />
+            </div>
+
+            <div class="form-group">
+                <label>Fecha de Nacimiento</label>
+                <input type="datetime-local" name="FachaNacimiento" value="@ViewBag.BuscarPersona.FachaNacimiento" />
+            </div>
+
+            <div class="form-group">
+                <label>Genero:</label>
+                <select name="Genero">
+
+                    <option value="M"> Masculino </option>
+                    <option value="F"> Femenino </option>
+
+                </select>
+            </div>
+
+
+            @{
+                var persona = (Persona)ViewBag.BuscarPersona;
+            }
+
+            <div class="form-group">
+                <label>Ciudad</label>
+                <select name="Ciudad">
+
+                    @foreach (var item in ViewBag.Ciudades)
+                    {
+                        if (persona.Ciudad == item.IdCiudad)
+                        {
+                            <option value="@item.IdCiudad" selected> @item.Nombre </option>
+                        }
+                        else
+                        {
+
+                            <option value="@item.IdCiudad">@item.Nombre </option>
+                        }
+                    }
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Direccion</label>
+                <input type="text" name="Direccion" value="@ViewBag.BuscarPersona.Direccion" />
+            </div>
+
+
+            <div class="form-group">
+                <label>Correo</label>
+                <input type="text" name="Correo" value="@ViewBag.BuscarPersona.Correo" />
+            </div>
+
+            <div class="form-group">
+                <label>Usuario</label>
+                <input type="text" name="Usuario" value="@ViewBag.BuscarPersona.Usuario" />
+            </div>
+
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="text" name="Contraseña" value="@ViewBag.BuscarPersona.Contraseña" />
+            </div>
+
+            <br /><br />
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+        </form>
+
+    </div>
+</div>

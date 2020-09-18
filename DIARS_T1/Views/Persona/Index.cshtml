@@ -3,7 +3,7 @@
 
 <br />
 
-<a href="/account/create"> Crear Cuenta</a>
+<a href="/persona/create"> Crear Cuenta</a>
 
 <br />
 <br />
@@ -32,39 +32,46 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr style="border-style:solid">
+        <tr style="border-style:solid">
 
 
-                <td>@item.IdPersona</td>
-                <td>@item.Nombre</td>
-                <td>@item.Apellido</td>
-                <td>@item.FachaNacimiento</td>
-                <td>@item.Dni</td>
-                <td>@item.Genero</td>
-                <td>
-                    @foreach (var ciudad in ViewBag.Ciudad)
+            <td>@item.IdPersona</td>
+            <td>@item.Nombre</td>
+            <td>@item.Apellido</td>
+
+            
+            @*@{ var edad = DateTime.Today.AddTicks(-item.FachaNacimiento.Ticks).Year - 1;
+            }*@
+
+            @*<td>@edad</td>*@
+
+
+            <td>@item.Dni</td>
+            <td>@item.Genero</td>
+            <td>
+                @foreach (var ciudad in ViewBag.Ciudad)
+                {
+                    if (ciudad.IdCiudad == item.Ciudad)
                     {
-                        if (ciudad.IdCiudad == item.Ciudad)
-                        {
-                            @ciudad.Nombre
-                        }
+                        @ciudad.Nombre
                     }
+                }
 
-                </td>
-                <td>@item.Direccion</td>
-                <td>@item.Correo</td>
-                <td>@item.Usuario</td>
-                <td>@item.Contraseña</td>
+            </td>
+            <td>@item.Direccion</td>
+            <td>@item.Correo</td>
+            <td>@item.Usuario</td>
+            <td>@item.Contraseña</td>
 
-                
-               
-                <td>
-                    <a href="/account/edit?id=">Editar</a>
-                </td>
-                <td>
-                    <a href="/account/delete?id=">Eliminar</a>
-                </td>
-            </tr>
+
+
+            <td>
+                <a href="/persona/edit?id=@item.IdPersona">Editar</a>
+            </td>
+            <td>
+                <a href="/persona/delete?id=@item.IdPersona">Eliminar</a>
+            </td>
+        </tr>
 
         }
 
