@@ -30,21 +30,44 @@
     </thead>
 
     <tbody>
+        @foreach (var item in Model)
+        {
             <tr style="border-style:solid">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+
+
+                <td>@item.IdPersona</td>
+                <td>@item.Nombre</td>
+                <td>@item.Apellido</td>
+                <td>@item.FachaNacimiento</td>
+                <td>@item.Dni</td>
+                <td>@item.Genero</td>
+                <td>
+                    @foreach (var ciudad in ViewBag.Ciudad)
+                    {
+                        if (ciudad.IdCiudad == item.Ciudad)
+                        {
+                            @ciudad.Nombre
+                        }
+                    }
+
+                </td>
+                <td>@item.Direccion</td>
+                <td>@item.Correo</td>
+                <td>@item.Usuario</td>
+                <td>@item.Contraseña</td>
+
+                
+               
+                <td>
+                    <a href="/account/edit?id=">Editar</a>
+                </td>
+                <td>
+                    <a href="/account/delete?id=">Eliminar</a>
+                </td>
             </tr>
+
+        }
+
     </tbody>
 
 </table>

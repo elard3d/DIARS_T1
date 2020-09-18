@@ -8,6 +8,7 @@ namespace DIARS_T1.Models
         public int IdPersona { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+        public string Dni{ get; set; }
         public DateTime? FachaNacimiento { get; set; }
         public string Genero { get; set; }
         public int? Ciudad { get; set; }
